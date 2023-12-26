@@ -1,2 +1,2 @@
-# PreEntregas Villarreal
+# PreEntrega Villarreal
 Entregas curso ReactJS
