@@ -1,0 +1,28 @@
+.itemDetail {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.itemDetail img {
+    width: 700px;
+
+
+}
+
+.itemDetail2 {
+    width: 150px;
+    margin: 90px;
+    padding-top: 150px;
+
+}
+
+.itemDetail2 h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.itemDetail2 h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: rgb(0, 145, 19);
+}

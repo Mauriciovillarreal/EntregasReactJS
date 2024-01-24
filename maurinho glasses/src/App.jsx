@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import React from 'react';
 import { NavBar } from './components/NavBar/NavBar';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
-function App() {
-  const [count, setCount] = useState(0)
 
+const App = () => {
   return (
     <>
-      <NavBar/>
-      <ItemListContainer greeting="Buenasss bienvenidos a mi ecommerce, gracias por todo."/>
+      <BrowserRouter>
+      <NavBar />
+        <Routes>
+          <Route path='/' element={ <ItemListContainer /> } />
+          <Route path='/categoria/:idCategoria' element={ <ItemListContainer /> } />
+          <Route path='/item/:idItem' element={ <ItemDetailContainer /> } />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
