@@ -3,9 +3,23 @@ import "./ItemDetail.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import { useState, useContext } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import { CarritoContext } from '../../context/CarritoContext';
 
+const ItemDetail = ({ id, nombre, precio, stock, img, descripcion, alto, ancho, puente }) => {
+  const [AgregarCantidad, setAgregarCantidad] = useState(0)
 
-const ItemDetail = ({ id, nombre, precio, img }) => {
+  const {agregarAlCarrito} = useContext(CarritoContext)
+
+  const manejadorCantidad = (cantidad) => {
+    setAgregarCantidad(cantidad)
+    
+    const item = {id, nombre, precio, img}
+    agregarAlCarrito(item, cantidad)
+  }
+
   return (
     <Container>
     <Row className='itemDetail'>
@@ -14,9 +28,19 @@ const ItemDetail = ({ id, nombre, precio, img }) => {
       </Col>
       <Col className='itemDetail2'>
         <h2>{nombre} </h2>
+        <img src="../img/tarjetas.png" alt=""/>
+
+        {
+          AgregarCantidad > 0 ? (<Link to="/cart" className='endbuy'>Terminar compra</Link>) : (<ItemCount inicial = {1} stock = {stock} funcionAgregar = {manejadorCantidad}/>)
+        }
         <h3>${precio} </h3>
-        <h4>Descripción</h4>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ea eum in consequatur nesciunt dolores nam, fugiat eligendi ipsa esse quod voluptatem accusamus facere natus! Numquam expedita ut repellendus inventore!</p>
+
+        <h5>Descripción</h5>
+        <p>{descripcion}</p>
+        <h6>Medidas de lentes</h6>
+        <div> Alto {alto}mm</div>
+        <div> Ancho {ancho}mm</div>
+        <div> Puente {puente}mm</div>
       </Col>
     </Row>
     </Container>

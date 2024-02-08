@@ -1,18 +1,19 @@
 .itemDetail {
     font-family: 'Montserrat', sans-serif;
+    padding-top: 100px;
 }
 
 .itemDetail img {
-    width: 700px;
-
+    width: 400px;
+    margin-top: 50px;
 
 }
 
 .itemDetail2 {
-    width: 150px;
+    width: 250px;
     margin: 90px;
-    padding-top: 150px;
-
+    
+    padding: 10px;
 }
 
 .itemDetail2 h2 {
@@ -23,6 +24,33 @@
 
 .itemDetail2 h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     color: rgb(0, 145, 19);
+}
+.itemDetail2 img {
+    width: 290px;
+    margin: 3px 3px 10px;
+}
+.itemDetail2 h5 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.itemDetail2 h6 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.endbuy {
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    color: black;
+    display: flex;
+    border: 1px solid;
+    text-decoration: none;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
